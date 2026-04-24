@@ -55,11 +55,14 @@ class MultiTaskUNet(nn.Module):
         return seg_mask, cls_out
 
 # ── Load model ───────────────────────────────────────────────────────────────
+from huggingface_hub import hf_hub_download
+
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 CLASS_NAMES = ["glioma", "meningioma", "no_tumor", "pituitary"]
 
+model_path = hf_hub_download(repo_id="Jatinredhu/brain-tumor-detection", filename="best_model_v2.pth")
 model = MultiTaskUNet(num_seg_classes=1, num_cls_classes=4)
-model.load_state_dict(torch.load("Best_Model/best_model_v2.pth", map_location=DEVICE))
+model.load_state_dict(torch.load(model_path, map_location=DEVICE))
 model.eval()
 model.to(DEVICE)
 
