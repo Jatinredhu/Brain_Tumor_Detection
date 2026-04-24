@@ -9,32 +9,33 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&family=Figtree:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         :root {
-            --bg: #141f3e;
-            --bg2: #18294f;
-            --panel: rgba(8, 16, 35, 0.92);
-            --panel2: rgba(10, 20, 45, 0.85);
-            --border: rgba(0, 180, 255, 0.08);
-            --border-hi: rgba(0, 180, 255, 0.18);
-            --border-glow: rgba(0, 180, 255, 0.45);
-            --cyan: #00b4ff;
-            --cyan-dim: rgba(0, 180, 255, 0.6);
-            --teal: #00ffd5;
-            --purple: #a855f7;
-            --red: #ff4d6d;
-            --green: #00ff88;
-            --blue: #4d9fff;
-            --amber: #fbbf24;
-            --text: #c8d8f0;
+            --bg: #0d1520;
+            --bg2: #111d2e;
+            --panel: rgba(17, 29, 46, 0.95);
+            --panel2: rgba(13, 21, 32, 0.90);
+            --border: rgba(100, 149, 200, 0.10);
+            --border-hi: rgba(100, 149, 200, 0.20);
+            --border-glow: rgba(100, 149, 200, 0.30);
+            --cyan: #4d8fc4;
+            --cyan-dim: rgba(77, 143, 196, 0.6);
+            --teal: #3aafaf;
+            --purple: #7f6fbb;
+            --red: #c0534f;
+            --green: #3a9e6f;
+            --blue: #4d8fc4;
+            --amber: #c49a3a;
+            --text: #d0dce8;
             --text-dim: #4a6080;
             --mono: 'JetBrains Mono', monospace;
             --display: 'Oxanium', sans-serif;
             --body: 'Figtree', sans-serif;
-            --glow-cyan: 0 0 20px rgba(0, 180, 255, 0.4);
-            --glow-red: 0 0 20px rgba(255, 77, 109, 0.5);
-            --glow-green: 0 0 20px rgba(0, 255, 136, 0.4);
-            --glow-purple: 0 0 20px rgba(168, 85, 247, 0.4);
+            --glow-cyan: 0 0 12px rgba(77, 143, 196, 0.20);
+            --glow-red: 0 0 12px rgba(192, 83, 79, 0.25);
+            --glow-green: 0 0 12px rgba(58, 158, 111, 0.20);
+            --glow-purple: 0 0 12px rgba(127, 111, 187, 0.20);
         }
 
         *,
@@ -110,44 +111,6 @@
                     rgba(0, 0, 0, 0.06) 3px, rgba(0, 0, 0, 0.06) 4px);
             pointer-events: none;
             z-index: 2;
-        }
-
-        /* ── HUD CORNERS ── */
-        .hud-corner {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            pointer-events: none;
-            z-index: 3;
-            opacity: 0.4;
-        }
-
-        .hud-corner.tl {
-            top: 16px;
-            left: 16px;
-            border-top: 1px solid var(--cyan);
-            border-left: 1px solid var(--cyan);
-        }
-
-        .hud-corner.tr {
-            top: 16px;
-            right: 16px;
-            border-top: 1px solid var(--cyan);
-            border-right: 1px solid var(--cyan);
-        }
-
-        .hud-corner.bl {
-            bottom: 16px;
-            left: 16px;
-            border-bottom: 1px solid var(--cyan);
-            border-left: 1px solid var(--cyan);
-        }
-
-        .hud-corner.br {
-            bottom: 16px;
-            right: 16px;
-            border-bottom: 1px solid var(--cyan);
-            border-right: 1px solid var(--cyan);
         }
 
         /* ── TOP BAR ── */
@@ -379,21 +342,6 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(135deg, rgba(0, 180, 255, 0.04) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        /* corner accents */
-        .panel::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 40px;
-            height: 40px;
-            border-top: 1px solid var(--cyan);
-            border-left: 1px solid var(--cyan);
-            border-radius: 14px 0 0 0;
-            opacity: 0.3;
             pointer-events: none;
         }
 
@@ -1496,17 +1444,10 @@
     <div class="grain"></div>
     <div class="scanlines"></div>
 
-    <!-- HUD CORNERS -->
-    <div class="hud-corner tl"></div>
-    <div class="hud-corner tr"></div>
-    <div class="hud-corner bl"></div>
-    <div class="hud-corner br"></div>
-
     <!-- TOP BAR -->
     <nav class="topbar">
         <div class="topbar-logo">NEUROSCAN</div>
         <div class="topbar-right">
-            <div class="topbar-stat">MODEL <span>best_model_v2.pth</span></div>
             <div class="topbar-stat">DICE <span>0.890</span></div>
             <div class="topbar-stat">ACC <span>99.0%</span></div>
         </div>
@@ -1746,7 +1687,7 @@
         <!-- FOOTER -->
         <div class="footer">
             <div class="footer-brand">NEUROSCAN · <span>BRISC 2025</span> · Attention UNet++ + EfficientNetB3</div>
-            <div class="footer-info">best_model_v2.pth · Dice 0.890 · Acc 0.99 · F1 0.99</div>
+            <div class="footer-info"> Dice 0.890 · Acc 0.99 · F1 0.99</div>
         </div>
 
     </div><!-- /wrapper -->
