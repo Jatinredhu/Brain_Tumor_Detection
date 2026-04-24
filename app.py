@@ -116,3 +116,4 @@ async def predict(file: UploadFile = File(...)):
         "overlay": overlay_b64,
         "all_probs": {CLASS_NAMES[i]: round(float(cls_probs[i]) * 100, 2) for i in range(4)}
     })
+app.mount("/static", StaticFiles(directory="."), name="static")
