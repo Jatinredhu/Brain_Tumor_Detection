@@ -56,42 +56,8 @@
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
-            cursor: none;
         }
 
-        /* ── CUSTOM CURSOR ── */
-        #cursor {
-            position: fixed;
-            width: 12px;
-            height: 12px;
-            border: 1.5px solid var(--cyan);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s, background 0.2s;
-            box-shadow: var(--glow-cyan);
-        }
-
-        #cursor-trail {
-            position: fixed;
-            width: 36px;
-            height: 36px;
-            border: 1px solid rgba(0, 180, 255, 0.2);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transform: translate(-50%, -50%);
-            transition: left 0.12s ease, top 0.12s ease;
-        }
-
-        body:has(button:hover) #cursor,
-        body:has(label:hover) #cursor,
-        body:has(.upload-zone:hover) #cursor {
-            width: 20px;
-            height: 20px;
-            background: rgba(0, 180, 255, 0.15);
-        }
 
         /* ── CANVAS BACKGROUND ── */
         #bgCanvas {
@@ -1523,10 +1489,6 @@
 
 <body>
 
-    <!-- CURSOR -->
-    <div id="cursor"></div>
-    <div id="cursor-trail"></div>
-
     <!-- CANVAS BACKGROUND -->
     <canvas id="bgCanvas"></canvas>
 
@@ -1790,17 +1752,6 @@
     </div><!-- /wrapper -->
 
     <script>
-        /* ── CURSOR ── */
-        const cursor = document.getElementById('cursor');
-        const trail = document.getElementById('cursor-trail');
-        document.addEventListener('mousemove', e => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            setTimeout(() => {
-                trail.style.left = e.clientX + 'px';
-                trail.style.top = e.clientY + 'px';
-            }, 80);
-        });
 
         /* ── CANVAS PARTICLE NETWORK ── */
         (function () {
